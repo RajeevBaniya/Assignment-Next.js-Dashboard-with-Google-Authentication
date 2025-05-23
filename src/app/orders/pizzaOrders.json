@@ -1,0 +1,26 @@
+[
+  {
+    "id": "PZA001",
+    "customerName": "John Doe",
+    "pizzaType": "Margherita",
+    "quantity": 2,
+    "orderDate": "2025-02-20 14:30",
+    "status": "Delivered"
+  },
+  {
+    "id": "PZA002",
+    "customerName": "Jane Smith",
+    "pizzaType": "Pepperoni",
+    "quantity": 1,
+    "orderDate": "2025-05-20 15:45",
+    "status": "Preparing"
+  },
+  {
+    "id": "PZA003",
+    "customerName": "Mike Johnson",
+    "pizzaType": "Veggie Supreme",
+    "quantity": 3,
+    "orderDate": "2025-03-20 16:15",
+    "status": "Out for Delivery"
+  }
+] 
