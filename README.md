@@ -5,6 +5,10 @@
 
 A modern, responsive dashboard application built with Next.js, featuring Google OAuth authentication, protected routes, and a beautiful UI for managing pizza orders.
 
+## Live Demo
+
+[View the Dashboard Live](https://assignment-next-js-dashboard-with-google-authentication.vercel.app) 
+
 ## Features
 
 - 🔐 **Google OAuth Authentication**

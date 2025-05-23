@@ -6,6 +6,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import pizzaOrders from "./pizzaOrders.json";
 import { useSession } from "next-auth/react";
+import { CheckCircleIcon, ClockIcon, TruckIcon, ShoppingBagIcon } from "@heroicons/react/24/outline";
 
 // Mock data for pizza orders
 const mockOrders = pizzaOrders as Array<{
@@ -64,10 +65,47 @@ export default function Orders() {
     return 0;
   });
 
+  // Summary stats
+  const totalOrders = mockOrders.length;
+  const delivered = mockOrders.filter(o => o.status === "Delivered").length;
+  const preparing = mockOrders.filter(o => o.status === "Preparing").length;
+  const outForDelivery = mockOrders.filter(o => o.status === "Out for Delivery").length;
+
   return (
     <div className="flex flex-col items-center min-h-[60vh] w-full bg-white px-2 sm:px-4 pt-0.5 sm:pt-2">
       <h1 className="text-xl sm:text-3xl font-extrabold mb-2 w-full text-left">Pizza Orders</h1>
       <div className="w-full mb-6 border-b border-gray-200"></div>
+      {/* Summary Cards */}
+      <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div className="flex flex-col items-center justify-center gap-1 bg-gray-50 rounded-lg shadow py-2 sm:py-3 w-full max-w-xs mx-auto">
+          <ShoppingBagIcon className="w-6 h-6 text-blue-500" />
+          <div className="flex flex-col items-center">
+            <div className="text-lg font-bold">{totalOrders}</div>
+            <div className="text-xs text-gray-500">Total Orders</div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-1 bg-green-50 rounded-lg shadow py-2 sm:py-3 w-full max-w-xs mx-auto">
+          <CheckCircleIcon className="w-6 h-6 text-green-500" />
+          <div className="flex flex-col items-center">
+            <div className="text-lg font-bold">{delivered}</div>
+            <div className="text-xs text-gray-500">Delivered</div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-1 bg-blue-50 rounded-lg shadow py-2 sm:py-3 w-full max-w-xs mx-auto">
+          <ClockIcon className="w-6 h-6 text-blue-400" />
+          <div className="flex flex-col items-center">
+            <div className="text-lg font-bold">{preparing}</div>
+            <div className="text-xs text-gray-500">Preparing</div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-1 bg-purple-50 rounded-lg shadow py-2 sm:py-3 w-full max-w-xs mx-auto">
+          <TruckIcon className="w-6 h-6 text-purple-500" />
+          <div className="flex flex-col items-center">
+            <div className="text-lg font-bold">{outForDelivery}</div>
+            <div className="text-xs text-gray-500">Out for Delivery</div>
+          </div>
+        </div>
+      </div>
       <div className="w-full mb-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-gray-50 rounded-lg shadow-sm px-2 sm:px-6 py-3 sm:py-4 mb-4 text-sm sm:text-base">
           <div className="w-full sm:w-auto">
@@ -85,7 +123,7 @@ export default function Orders() {
           </div>
           <div className="flex gap-2 w-full sm:w-auto">
             <button
-              className={`w-full sm:w-auto px-3 py-1 rounded border font-semibold ${sortKey === 'id' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
+              className={`w-full sm:w-auto px-3 py-1 rounded border font-semibold transition-colors duration-200 ${sortKey === 'id' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-blue-100'}`}
               onClick={() => {
                 setSortKey('id');
                 setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
@@ -94,7 +132,7 @@ export default function Orders() {
               Sort by Order ID
             </button>
             <button
-              className={`w-full sm:w-auto px-3 py-1 rounded border font-semibold ${sortKey === 'orderDate' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-gray-100'}`}
+              className={`w-full sm:w-auto px-3 py-1 rounded border font-semibold transition-colors duration-200 ${sortKey === 'orderDate' ? 'bg-black text-white border-black' : 'bg-white text-black border-gray-300 hover:bg-blue-100'}`}
               onClick={() => {
                 setSortKey('orderDate');
                 setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
@@ -128,7 +166,7 @@ export default function Orders() {
                 </tr>
               ) : (
                 filteredOrders.map((order) => (
-                  <tr key={order.id} className="hover:bg-gray-50 transition-colors">
+                  <tr key={order.id} className="hover:bg-blue-50 transition-colors duration-200 cursor-pointer">
                     <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm font-bold text-black text-left">{order.id}</td>
                     <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-black text-left">{order.customerName}</td>
                     <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-black text-left">{order.pizzaType}</td>
