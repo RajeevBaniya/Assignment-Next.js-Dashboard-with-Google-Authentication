@@ -111,9 +111,9 @@ export default function Orders() {
                 <th className="px-2 sm:px-6 py-3 sm:py-4 border-b text-left text-xs font-bold text-black uppercase tracking-wider">Order ID</th>
                 <th className="px-2 sm:px-6 py-3 sm:py-4 border-b text-left text-xs font-bold text-black uppercase tracking-wider">Customer Name</th>
                 <th className="px-2 sm:px-6 py-3 sm:py-4 border-b text-left text-xs font-bold text-black uppercase tracking-wider">Pizza Type</th>
-                <th className="px-2 sm:px-6 py-3 sm:py-4 border-b text-left text-xs font-bold text-black uppercase tracking-wider">Quantity</th>
-                <th className="px-2 sm:px-6 py-3 sm:py-4 border-b text-left text-xs font-bold text-black uppercase tracking-wider">Order Date</th>
-                <th className="px-2 sm:px-6 py-3 sm:py-4 border-b text-left text-xs font-bold text-black uppercase tracking-wider">Status</th>
+                <th className="px-2 sm:px-6 py-3 sm:py-4 border-b text-center text-xs font-bold text-black uppercase tracking-wider">Quantity</th>
+                <th className="px-2 sm:px-6 py-3 sm:py-4 border-b text-center text-xs font-bold text-black uppercase tracking-wider">Order Date</th>
+                <th className="px-2 sm:px-6 py-3 sm:py-4 border-b text-center text-xs font-bold text-black uppercase tracking-wider">Status</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
@@ -129,12 +129,12 @@ export default function Orders() {
               ) : (
                 filteredOrders.map((order) => (
                   <tr key={order.id} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm font-bold text-black">{order.id}</td>
-                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-black">{order.customerName}</td>
-                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-black">{order.pizzaType}</td>
-                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-black">{order.quantity}</td>
-                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-black">{order.orderDate}</td>
-                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
+                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm font-bold text-black text-left">{order.id}</td>
+                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-black text-left">{order.customerName}</td>
+                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-black text-left">{order.pizzaType}</td>
+                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-black text-center">{order.quantity}</td>
+                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-black text-center">{order.orderDate}</td>
+                    <td className="px-2 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-center">
                       <span className={`px-4 py-1 inline-flex text-sm leading-5 font-semibold rounded-full shadow-sm border ${
                         order.status === 'Delivered' ? 'bg-green-100 text-green-800 border-green-200' :
                         order.status === 'Preparing' ? 'bg-blue-100 text-blue-800 border-blue-200' :
