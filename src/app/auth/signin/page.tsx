@@ -1,6 +1,6 @@
 export default function SignIn() {
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden px-2 sm:px-4">
+    <div className="relative min-h-screen w-full flex items-center justify-center lg:justify-start overflow-hidden px-2 sm:px-4 lg:pl-12 xl:pl-24">
       {/* Full-page background image */}
       <div className="absolute inset-0 z-0">
         <div style={{backgroundImage: 'url(/images/sign.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} className="w-full h-full min-h-screen" />
