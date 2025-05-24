@@ -8,8 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#0070f3',
-        secondary: '#1a1a1a',
+        tomato: '#FF6F61',      
+        tomatoHover: '#FF3B2E', 
+        tomatoLight: '#FFB3A7', 
+        cheese: '#FFE082',      
+        crust: '#F5E0C3',       
+        basil: '#81C784',       
+        cream: '#FFFDF6',       
+        text: '#4E342E',        
       },
     },
   },

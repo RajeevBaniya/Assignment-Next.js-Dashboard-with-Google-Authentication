@@ -7,8 +7,8 @@ import { Navigation } from "@/components/Navigation";
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
-  title: "Next.js Dashboard",
-  description: "A modern dashboard application built with Next.js",
+  title: "PizzaPanel",
+  description: "A modern pizza order management application built with Next.js",
 };
 
 export default function RootLayout({
@@ -17,11 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-white text-black min-h-screen`}>
+    <html lang="en" className="bg-cream">
+      <body className={`${inter.className} bg-cream text-text min-h-screen`}>
         <AuthProvider>
           <Navigation />
-          <main className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center bg-white">
+          <main className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center bg-cream">
             {children}
           </main>
         </AuthProvider>

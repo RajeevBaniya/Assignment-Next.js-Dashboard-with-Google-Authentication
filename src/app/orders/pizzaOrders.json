@@ -22,5 +22,53 @@
     "quantity": 3,
     "orderDate": "2025-03-20 16:15",
     "status": "Out for Delivery"
+  },
+  {
+    "id": "PZA004",
+    "customerName": "Emily Clark",
+    "pizzaType": "BBQ Chicken",
+    "quantity": 2,
+    "orderDate": "2025-04-10 12:00",
+    "status": "Pending"
+  },
+  {
+    "id": "PZA005",
+    "customerName": "Chris Evans",
+    "pizzaType": "Hawaiian",
+    "quantity": 1,
+    "orderDate": "2025-06-15 18:20",
+    "status": "Cancelled"
+  },
+  {
+    "id": "PZA006",
+    "customerName": "Sophia Lee",
+    "pizzaType": "Four Cheese",
+    "quantity": 2,
+    "orderDate": "2025-07-22 13:10",
+    "status": "Delivered"
+  },
+  {
+    "id": "PZA007",
+    "customerName": "Liam Brown",
+    "pizzaType": "Meat Lovers",
+    "quantity": 4,
+    "orderDate": "2025-08-05 19:30",
+    "status": "Preparing"
+  },
+  {
+    "id": "PZA008",
+    "customerName": "Olivia Green",
+    "pizzaType": "Mushroom",
+    "quantity": 1,
+    "orderDate": "2025-09-12 11:45",
+    "status": "Out for Delivery"
+  },
+  {
+    "id": "PZA009",
+    "customerName": "Noah Wilson",
+    "pizzaType": "Spicy Veggie",
+    "quantity": 2,
+    "orderDate": "2025-10-01 17:00",
+    "status": "Pending"
   }
 ] 

@@ -30,9 +30,11 @@ export function SignInModal({ onClose }: { onClose: () => void }) {
         <p className="text-gray-500 mb-6 text-center text-sm sm:text-base">Sign in to the app securely with Google authentication.</p>
         <button
           onClick={() => signIn('google', { callbackUrl: '/' })}
-          className="flex items-center justify-center w-full bg-black text-white font-semibold rounded-lg px-4 sm:px-6 py-3 text-base sm:text-lg shadow hover:bg-gray-800 transition-colors duration-150"
+          className="flex items-center justify-center w-full bg-tomato text-white font-semibold rounded-lg px-4 sm:px-6 py-3 text-base sm:text-lg shadow hover:bg-tomatoHover transition-colors duration-150"
         >
-          <svg className="w-6 h-6 mr-2" viewBox="0 0 48 48"><g><path fill="#4285F4" d="M24 9.5c3.54 0 6.7 1.22 9.19 3.23l6.85-6.85C35.64 2.69 30.18 0 24 0 14.82 0 6.73 5.82 2.69 14.09l7.98 6.19C12.13 13.99 17.57 9.5 24 9.5z"/><path fill="#34A853" d="M46.1 24.55c0-1.64-.15-3.22-.42-4.74H24v9.01h12.42c-.54 2.91-2.18 5.38-4.65 7.04l7.19 5.59C43.98 37.13 46.1 31.3 46.1 24.55z"/><path fill="#FBBC05" d="M10.67 28.28c-1.13-3.36-1.13-6.99 0-10.35l-7.98-6.19C.99 16.09 0 19.92 0 24c0 4.08.99 7.91 2.69 12.26l7.98-6.19z"/><path fill="#EA4335" d="M24 48c6.18 0 11.64-2.05 15.53-5.59l-7.19-5.59c-2.01 1.35-4.59 2.15-8.34 2.15-6.43 0-11.87-4.49-13.33-10.55l-7.98 6.19C6.73 42.18 14.82 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></g></svg>
+          <span className="bg-white rounded-full p-1 mr-2 flex items-center justify-center">
+            <svg className="w-6 h-6" viewBox="0 0 48 48"><g><path fill="#4285F4" d="M24 9.5c3.54 0 6.7 1.22 9.19 3.23l6.85-6.85C35.64 2.69 30.18 0 24 0 14.82 0 6.73 5.82 2.69 14.09l7.98 6.19C12.13 13.99 17.57 9.5 24 9.5z"/><path fill="#34A853" d="M46.1 24.55c0-1.64-.15-3.22-.42-4.74H24v9.01h12.42c-.54 2.91-2.18 5.38-4.65 7.04l7.19 5.59C43.98 37.13 46.1 31.3 46.1 24.55z"/><path fill="#FBBC05" d="M10.67 28.28c-1.13-3.36-1.13-6.99 0-10.35l-7.98-6.19C.99 16.09 0 19.92 0 24c0 4.08.99 7.91 2.69 12.26l7.98-6.19z"/><path fill="#EA4335" d="M24 48c6.18 0 11.64-2.05 15.53-5.59l-7.19-5.59c-2.01 1.35-4.59 2.15-8.34 2.15-6.43 0-11.87-4.49-13.33-10.55l-7.98 6.19C6.73 42.18 14.82 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></g></svg>
+          </span>
           <span className="truncate">Sign in with Google</span>
         </button>
       </div>
