@@ -78,7 +78,7 @@ export default function Orders() {
   const pending = mockOrders.filter(o => o.status === "Pending").length;
 
   return (
-    <div className="flex flex-col items-center min-h-[60vh] w-full bg-cream px-2 sm:px-4 pt-0.5 sm:pt-2">
+    <div className="flex flex-col items-center min-h-[60vh] w-full bg-cream px-2 sm:px-4 pt-0.5 sm:pt-2 mt-4">
       <h1 className="text-xl sm:text-3xl font-extrabold mb-2 w-full text-left text-tomato">Pizza Orders</h1>
       <div className="w-full mb-6 border-b border-cheese"></div>
       {/* Cards */}

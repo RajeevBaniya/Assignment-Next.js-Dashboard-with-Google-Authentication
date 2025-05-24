@@ -1,10 +1,16 @@
 export default function SignIn() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] w-full bg-cream px-4 pt-1 sm:pt-3">
-      <div className="max-w-xl w-full flex flex-col items-center bg-cream border-2 border-cheese rounded-xl shadow-lg px-4 py-6 sm:px-10 sm:py-12">
-        <h1 className="text-xl sm:text-3xl lg:text-5xl font-extrabold text-tomato mb-3 text-center tracking-tight whitespace-nowrap">Welcome to PizzaPanel</h1>
-        <p className="text-sm sm:text-base lg:text-xl text-text text-center mb-4">Sign in to access your personalized PizzaPanel and manage your pizza orders.</p>
-        <p className="text-xs sm:text-base lg:text-lg text-cheese text-center">Click the <span className="font-semibold text-tomato">Sign In</span> button in the top right to get started.</p>
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden px-2 sm:px-4">
+      {/* Full-page background image */}
+      <div className="absolute inset-0 z-0">
+        <div style={{backgroundImage: 'url(/images/sign.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} className="w-full h-full min-h-screen" />
+        <div className="absolute inset-0 bg-cream/60" />
+      </div>
+      {/* Content */}
+      <div className="relative z-10 bg-cream rounded-xl shadow-lg border-2 border-cheese px-2 py-4 sm:px-6 sm:py-8 md:px-10 md:py-12 max-w-sm md:max-w-lg lg:max-w-xl w-full flex flex-col items-center">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 text-tomato text-center drop-shadow-lg tracking-tight uppercase">Welcome to PizzaPanel</h1>
+        <p className="text-sm sm:text-base md:text-lg text-text text-center font-mono mb-2">Sign in to access your personalized PizzaPanel and manage your pizza orders.</p>
+        <p className="text-xs sm:text-base md:text-lg text-brown-700 text-center font-mono">Click the <span className="font-semibold text-tomato">Sign In</span> button in the top right to get started.</p>
       </div>
     </div>
   );

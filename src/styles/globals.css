@@ -24,4 +24,86 @@ body {
 }
 .animate-fadeIn {
   animation: fadeIn 0.25s ease;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.animate-gradientMove {
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease-in-out infinite;
+}
+
+@keyframes blob1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, 40px) scale(1.1); }
+  66% { transform: translate(20px, -20px) scale(0.95); }
+}
+.animate-blob1 {
+  animation: blob1 12s ease-in-out infinite;
+}
+@keyframes blob2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 30px) scale(1.1); }
+}
+.animate-blob2 {
+  animation: blob2 14s ease-in-out infinite;
+}
+@keyframes blob3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 20px) scale(1.08); }
+  66% { transform: translate(30px, -30px) scale(0.97); }
+}
+.animate-blob3 {
+  animation: blob3 16s ease-in-out infinite;
+}
+
+.bg-stripes {
+  background-image: repeating-linear-gradient(135deg, #FF6F61 0 8px, #FFE082 8px 16px, #F5E0C3 16px 24px, transparent 24px 32px);
+  background-size: 48px 48px;
+}
+@keyframes stripesMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 48px 48px; }
+}
+.animate-stripes {
+  animation: stripesMove 10s linear infinite;
+}
+
+@keyframes circle1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, 30px) scale(1.08); }
+}
+.animate-circle1 {
+  animation: circle1 13s ease-in-out infinite;
+}
+@keyframes circle2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-25px, 15px) scale(0.95); }
+}
+.animate-circle2 {
+  animation: circle2 15s ease-in-out infinite;
+}
+@keyframes circle3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.1); }
+}
+.animate-circle3 {
+  animation: circle3 17s ease-in-out infinite;
+}
+@keyframes circle4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-20px, -25px) scale(1.05); }
+}
+.animate-circle4 {
+  animation: circle4 19s ease-in-out infinite;
 } 
