@@ -7,6 +7,7 @@ import { authOptions } from "@/lib/auth";
 import pizzaOrders from "./pizzaOrders.json";
 import { useSession } from "next-auth/react";
 import { CheckCircleIcon, ClockIcon, TruckIcon, ShoppingBagIcon, XCircleIcon, PauseCircleIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 // Mock data for pizza orders
 const mockOrders = pizzaOrders as Array<{
@@ -82,7 +83,12 @@ export default function Orders() {
       <h1 className="text-xl sm:text-3xl font-extrabold mb-2 w-full text-left text-tomato">Pizza Orders</h1>
       <div className="w-full mb-6 border-b border-cheese"></div>
       {/* Cards */}
-      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6"
+      >
         <div className="flex flex-col items-center justify-center gap-1 bg-crust box-border rounded-lg shadow py-2 w-full max-w-xs mx-auto">
           <ShoppingBagIcon className="w-5 h-5 text-tomato" />
           <div className="flex flex-col items-center">
@@ -125,7 +131,7 @@ export default function Orders() {
             <div className="text-sm text-text/70">Cancelled</div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="w-full mb-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-crust/40 rounded-lg shadow-sm px-2 sm:px-6 py-3 sm:py-4 mb-4 text-sm sm:text-base">
           <div className="w-full sm:w-auto">
@@ -162,7 +168,12 @@ export default function Orders() {
             </button>
           </div>
         </div>
-        <div className="overflow-x-auto rounded-2xl shadow-lg min-h-[320px] bg-crust/10 flex flex-col justify-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="overflow-x-auto rounded-2xl shadow-lg min-h-[320px] bg-crust/10 flex flex-col justify-center"
+        >
           <table className="min-w-full bg-cream border border-cheese rounded-2xl overflow-hidden text-xs sm:text-sm">
             <thead className="sticky top-0 z-10 bg-cheese/60">
               <tr>
@@ -200,8 +211,9 @@ export default function Orders() {
               )}
             </tbody>
           </table>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 } 
+ 
